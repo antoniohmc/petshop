@@ -3,7 +3,7 @@ package TarefaAvaliativa2.petShop.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.math.BigInteger;
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -12,16 +12,19 @@ import java.math.BigInteger;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+public class Pagamento {
 
-@Table(name = "quantidade_estoque")
-public class QuantidadeEstoque {
+    @ManyToOne
+    Atendimento atendimento;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "quantidade_atual")
-    private BigInteger quantidadeAtual;
 
-    @OneToOne Produto produto;
+    private Integer valor;
+
+    private LocalDateTime dataPagamento;
+
+    private FormaPagamento formaPagamento;
 
 }
