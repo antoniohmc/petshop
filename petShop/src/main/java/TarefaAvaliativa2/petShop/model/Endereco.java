@@ -25,11 +25,15 @@ public class Endereco {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    private String cidade;
+
     private String logradouro;
 
     private String bairro;
 
     private Integer numero;
+
+    private String estado;
 
     @ManyToOne
     private Cliente cliente;

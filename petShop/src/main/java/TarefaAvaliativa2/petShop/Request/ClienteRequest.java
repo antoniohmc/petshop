@@ -3,6 +3,8 @@ package TarefaAvaliativa2.petShop.Request;
 import TarefaAvaliativa2.petShop.model.Endereco;
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 public class ClienteRequest {
 
@@ -10,5 +12,5 @@ public class ClienteRequest {
 
     private String cpf;
 
-    private Endereco endereco;
+    private List<Endereco> endereco;
 }

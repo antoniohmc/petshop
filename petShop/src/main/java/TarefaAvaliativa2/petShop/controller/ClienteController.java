@@ -15,8 +15,9 @@ public class ClienteController {
 
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
-    private void cadastrarClientes(@RequestBody ClienteRequest clienteRequest) {
+    public ClienteResponse cadastrarClientes(@RequestBody ClienteRequest clienteRequest) {
 
+        return new ClienteResponse();
     }
 
     @PutMapping(path = "/{idCliente}")
@@ -25,12 +26,12 @@ public class ClienteController {
     }
 
     @GetMapping()
-    private List<ClienteResponse> listaDeClientes(@RequestParam String nome) {
+    public List<ClienteResponse> listaDeClientes(@RequestParam String nome) {
         return new ArrayList<>();
     }
 
     @DeleteMapping("/{idCliente}")
-    private void deletarCliente(@PathVariable Integer idCliente) {
+    public void deletarCliente(@PathVariable Integer idCliente) {
 
     }
 
