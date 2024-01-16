@@ -1,4 +1,4 @@
-package TarefaAvaliativa2.petShop.Request;
+package TarefaAvaliativa2.petShop.request;
 
 import TarefaAvaliativa2.petShop.model.FormaPagamento;
 import lombok.Data;

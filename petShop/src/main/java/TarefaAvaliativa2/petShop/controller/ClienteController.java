@@ -1,7 +1,7 @@
 package TarefaAvaliativa2.petShop.controller;
 
-import TarefaAvaliativa2.petShop.Request.ClienteRequest;
-import TarefaAvaliativa2.petShop.Response.ClienteResponse;
+import TarefaAvaliativa2.petShop.request.ClienteRequest;
+import TarefaAvaliativa2.petShop.response.ClienteResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,8 +21,9 @@ public class ClienteController {
     }
 
     @PutMapping(path = "/{idCliente}")
-    public void editarClientes(@PathVariable Integer idCliente, @RequestBody ClienteRequest clienteRequest) {
+    public List<ClienteResponse> editarClientes(@PathVariable Integer idCliente, @RequestBody ClienteRequest clienteRequest) {
 
+        return new ArrayList<>();
     }
 
     @GetMapping()
@@ -31,8 +32,9 @@ public class ClienteController {
     }
 
     @DeleteMapping("/{idCliente}")
-    public void deletarCliente(@PathVariable Integer idCliente) {
+    public List<ClienteResponse> deletarCliente(@PathVariable Integer idCliente) {
 
+        return new ArrayList<>();
     }
 
 }

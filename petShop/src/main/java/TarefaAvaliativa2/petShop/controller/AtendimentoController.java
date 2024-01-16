@@ -1,21 +1,14 @@
 package TarefaAvaliativa2.petShop.controller;
 
-import TarefaAvaliativa2.petShop.Request.AtendimentoRequest;
-import TarefaAvaliativa2.petShop.Request.PagamentoRequest;
-import TarefaAvaliativa2.petShop.Request.ProdutosIdRequest;
-import TarefaAvaliativa2.petShop.Response.AtendimentoResponse;
+import TarefaAvaliativa2.petShop.request.AtendimentoRequest;
+import TarefaAvaliativa2.petShop.request.PagamentoRequest;
+import TarefaAvaliativa2.petShop.request.ProdutosIdRequest;
+import TarefaAvaliativa2.petShop.response.AtendimentoResponse;
+import org.springframework.web.bind.annotation.*;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(path = "/atendimentos")
@@ -42,9 +35,10 @@ public class AtendimentoController {
     }
 
     @PatchMapping("/{idAtendimento}")
-    public void editarUmAtendimento(@RequestBody AtendimentoRequest atendimentoRequest,
-                                    @RequestParam(required = false) Integer valorConsulta) {
+    public List<AtendimentoResponse> editarUmAtendimento(@RequestBody AtendimentoRequest atendimentoRequest,
+                                                         @RequestParam(required = false) Integer valorConsulta) {
 
+        return new ArrayList<>();
     }
 
     @PostMapping("/{idAtendimento}/produtos")

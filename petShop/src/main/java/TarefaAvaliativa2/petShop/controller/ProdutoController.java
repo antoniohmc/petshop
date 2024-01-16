@@ -1,8 +1,7 @@
 package TarefaAvaliativa2.petShop.controller;
 
-import TarefaAvaliativa2.petShop.Request.ProdutoRequest;
-import TarefaAvaliativa2.petShop.Response.AtendimentoResponse;
-import TarefaAvaliativa2.petShop.Response.ProdutoResponse;
+import TarefaAvaliativa2.petShop.request.ProdutoRequest;
+import TarefaAvaliativa2.petShop.response.ProdutoResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,6 +1,8 @@
-package TarefaAvaliativa2.petShop.Request;
+package TarefaAvaliativa2.petShop.request;
 
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 public class AtendimentoRequest {
@@ -13,5 +15,5 @@ public class AtendimentoRequest {
 
     private Integer valorConsulta;
 
-    private ProdutosIdRequest produtosId;
+    private List<ProdutosIdRequest> produtosId;
 }

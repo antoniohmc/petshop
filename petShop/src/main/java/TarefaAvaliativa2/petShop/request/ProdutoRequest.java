@@ -1,4 +1,4 @@
-package TarefaAvaliativa2.petShop.Request;
+package TarefaAvaliativa2.petShop.request;
 
 import lombok.Data;
 
