@@ -1,8 +1,6 @@
 package TarefaAvaliativa2.petShop.controller;
 
-import TarefaAvaliativa2.petShop.request.AtendimentoRequest;
-import TarefaAvaliativa2.petShop.request.PagamentoRequest;
-import TarefaAvaliativa2.petShop.request.ProdutosIdRequest;
+import TarefaAvaliativa2.petShop.request.*;
 import TarefaAvaliativa2.petShop.response.AtendimentoResponse;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,27 +33,26 @@ public class AtendimentoController {
     }
 
     @PatchMapping("/{idAtendimento}")
-    public List<AtendimentoResponse> editarUmAtendimento(@RequestBody AtendimentoRequest atendimentoRequest,
-                                                         @RequestParam(required = false) Integer valorConsulta) {
+    public List<AtendimentoResponse> editarUmAtendimento(@RequestBody EditarAtendimentoRequest editarAtendimentoRequest) {
 
         return new ArrayList<>();
     }
 
     @PostMapping("/{idAtendimento}/produtos")
     public List<AtendimentoRequest> adicionarProdutos(@PathVariable Integer idAtendimento,
-                                                      @RequestParam(required = false) ProdutosIdRequest produtos) {
+                                                      @RequestBody AdicionarProdutoRequest produtos) {
         return new ArrayList<>();
     }
 
     @DeleteMapping("/{idAtendimento}/produtos")
     public List<AtendimentoRequest> removerProduto(@PathVariable Integer idAtendimento,
-                                                   @RequestParam(required = false) ProdutosIdRequest produtos) {
+                                                   @RequestBody AdicionarProdutoRequest produtos) {
         return new ArrayList<>();
     }
 
     @PostMapping("/{idAtendimento}/pagamentos")
     public List<AtendimentoResponse> adicionarPagamentosAUmAtendimento(@PathVariable Integer idAtendimento,
-                                                                       @RequestParam(required = false) PagamentoRequest pagamentos) {
+                                                                       @RequestBody PagamentoRequest pagamentos) {
         return new ArrayList<>();
     }
 
