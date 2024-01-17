@@ -4,7 +4,6 @@ import TarefaAvaliativa2.petShop.request.ClienteRequest;
 import TarefaAvaliativa2.petShop.response.ClienteResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
