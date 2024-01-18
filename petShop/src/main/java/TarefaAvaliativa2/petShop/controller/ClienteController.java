@@ -4,36 +4,53 @@ import TarefaAvaliativa2.petShop.request.ClienteRequest;
 import TarefaAvaliativa2.petShop.response.ClienteResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/clientes")
+@RequestMapping(path = "/clientes")
 public class ClienteController {
 
+    private final ClienteService clienteService;
 
-    @PostMapping()
+    public ClienteController(ClienteService clienteService) {
+        this.clienteService = clienteService;
+    }
+
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ClienteResponse cadastrarClientes(@RequestBody ClienteRequest clienteRequest) {
-
-        return new ClienteResponse();
+    public ClienteResponse criarCliente(
+            @RequestBody ClienteRequest clienteRequest
+    ) {
+        Cliente model = clienteRequest.toModel();
+        Cliente salvo = clienteService.criarNovo(model);
+        return ClienteResponse.of(salvo);
+        // return ClienteResponse.of(clienteService.criarNovo(clienteRequest.toModel));
     }
 
-    @PutMapping(path = "/{idCliente}")
-    public List<ClienteResponse> editarClientes(@PathVariable Integer idCliente, @RequestBody ClienteRequest clienteRequest) {
-
-        return new ArrayList<>();
+    @GetMapping
+    public List<ClienteResponse> listarClientes(
+            @RequestParam(name = "nome", required = false) String nomeCliente
+    ) {
+        return List.of(
+                ClienteResponse.builder()
+                        .id(1)
+                        .nome("Teste")
+                        .cpf("cpf")
+                        .build()
+        );
     }
 
-    @GetMapping()
-    public List<ClienteResponse> listaDeClientes(@RequestParam String nome) {
-        return new ArrayList<>();
+    @DeleteMapping(path = "/{id}")
+    public void deletarCliente(@PathVariable Integer id) {
+
     }
 
-    @DeleteMapping("/{idCliente}")
-    public List<ClienteResponse> deletarCliente(@PathVariable Integer idCliente) {
-
-        return new ArrayList<>();
+    @PutMapping(path = "/{id}")
+    public ClienteResponse editarCliente(@PathVariable Integer id,
+                                         @RequestBody ClienteRequest clienteRequest) {
+        return ClienteResponse.of(
+                clienteService.editarCliente(id, clienteRequest.toModel()
+                ));
     }
 
 }

@@ -14,21 +14,39 @@ public class ProdutoController {
 
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
-    public ProdutoResponse cadastrarProduto(@RequestBody ProdutoRequest produtoRequest) {
+    public ProdutoResponse criarProduto(@RequestBody ProdutoRequest produtoRequest) {
 
         return new ProdutoResponse();
     }
 
-    @PutMapping("/{idProduto}")
-    public List<ProdutoResponse> editarProduto(@PathVariable Integer idProduto, @RequestBody ProdutoRequest produtoRequest) {
-
-        return new ArrayList<>();
+    @PutMapping(path = "/{idProduto}")
+    public ProdutoResponse editarProduto(@PathVariable Long idProduto) {
+        return ProdutoResponse.builder()
+                .id(1)
+                .nome("Teste Edit")
+                .descricao("descricao")
+                .quantidadeEstoque(0)
+                .valor(12000)
+                .build();
     }
 
-    @GetMapping()
-    public List<ProdutoResponse> listarProdutosCadastrados(@RequestParam(required = false) String nome, @RequestParam(required = false) Integer maiorQue, @RequestParam(required = false) Integer menorQue) {
-        return new ArrayList<>();
 
+
+    @GetMapping
+    public List<ProdutoResponse> listarProdutos(
+            @RequestParam(required = false) String nome,
+            @RequestParam(required = false) Integer precoMaiorQue,
+            @RequestParam(required = false) Integer precoMenorQue
+    ) {
+        return List.of(
+                ProdutoResponse.builder()
+                        .id(1)
+                        .nome("Teste")
+                        .descricao("descricao")
+                        .quantidadeEstoque(0)
+                        .valor(12000)
+                        .build()
+        );
     }
 
     @DeleteMapping("/{idProduto}")

@@ -4,9 +4,9 @@ import TarefaAvaliativa2.petShop.model.FormaPagamento;
 import lombok.Data;
 
 @Data
-public class PagamentoRequest {
+public class AdicionarPagamentoRequest {
 
-    private Integer valor;
+    private Integer valorPago;
 
     private FormaPagamento formaPagamento;
 }
