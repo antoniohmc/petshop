@@ -1,7 +1,7 @@
 package TarefaAvaliativa2.petShop.controller;
 
 
-import TarefaAvaliativa2.petShop.controller.request.AdicionarProdutoRequest;
+import TarefaAvaliativa2.petShop.controller.produto.AdicionarProdutoRequest;
 import TarefaAvaliativa2.petShop.controller.request.IniciarAtendimentoRequest;
 import TarefaAvaliativa2.petShop.controller.request.EditarAtendimentoRequest;
 import TarefaAvaliativa2.petShop.controller.request.AdicionarPagamentoRequest;

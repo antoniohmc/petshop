@@ -1,5 +1,6 @@
 package TarefaAvaliativa2.petShop.controller.request;
 
+import TarefaAvaliativa2.petShop.controller.produto.ProdutosIdRequest;
 import lombok.Data;
 
 import java.util.List;

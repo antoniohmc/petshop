@@ -1,5 +1,6 @@
-package TarefaAvaliativa2.petShop.controller.response;
+package TarefaAvaliativa2.petShop.controller.produto;
 
+import TarefaAvaliativa2.petShop.model.QuantidadeEstoque;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -21,4 +22,7 @@ public class ProdutoResponse {
 
     private String nome;
 
+    public Integer getQuantidadeEstoque() {
+        return quantidadeEstoque;
+    }
 }

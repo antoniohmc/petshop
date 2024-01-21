@@ -22,6 +22,5 @@ public class QuantidadeEstoque {
     @Column(name = "quantidade_atual")
     private BigInteger quantidadeAtual;
 
-    @OneToOne Produto produto;
 
 }

@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -35,8 +36,10 @@ public class Produto {
     @Column(length = 50)
     private String nome;
 
-    @ManyToOne
-    private TipoAnimal tipoAnimais;
+    @OneToOne
+    private QuantidadeEstoque quantidadeEstoque;
+
+
 
 
 }
