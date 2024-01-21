@@ -1,4 +1,4 @@
-package TarefaAvaliativa2.petShop.request;
+package TarefaAvaliativa2.petShop.controller.request;
 
 public class EditarAtendimentoRequest {
 

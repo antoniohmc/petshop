@@ -1,4 +1,4 @@
-package TarefaAvaliativa2.petShop.response;
+package TarefaAvaliativa2.petShop.controller.response;
 
 import TarefaAvaliativa2.petShop.model.Endereco;
 import lombok.Builder;

@@ -1,11 +1,11 @@
 package TarefaAvaliativa2.petShop.controller;
 
 
-import TarefaAvaliativa2.petShop.request.AdicionarProdutoRequest;
-import TarefaAvaliativa2.petShop.request.IniciarAtendimentoRequest;
-import TarefaAvaliativa2.petShop.request.EditarAtendimentoRequest;
-import TarefaAvaliativa2.petShop.request.AdicionarPagamentoRequest;
-import TarefaAvaliativa2.petShop.response.AtendimentoResponse;
+import TarefaAvaliativa2.petShop.controller.request.AdicionarProdutoRequest;
+import TarefaAvaliativa2.petShop.controller.request.IniciarAtendimentoRequest;
+import TarefaAvaliativa2.petShop.controller.request.EditarAtendimentoRequest;
+import TarefaAvaliativa2.petShop.controller.request.AdicionarPagamentoRequest;
+import TarefaAvaliativa2.petShop.controller.response.AtendimentoResponse;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -14,7 +14,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "/atendimentos")
-public class AtendimentoController {
+public class
+AtendimentoController {
 
     @PostMapping
     public void iniciarAtendimento(
