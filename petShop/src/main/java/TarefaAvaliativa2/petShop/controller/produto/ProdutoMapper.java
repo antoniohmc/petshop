@@ -11,10 +11,8 @@ public class ProdutoMapper {
     public static ProdutoResponse mapToProdutoResponse(Produto produto) {
 
         return ProdutoResponse.builder()
-            .id(produto.getId())
             .valor(produto.getValor())
             .descricao(produto.getDescricao())
-            .quantidadeEstoque(produto.getQuantidadeEstoque().getId())
             .nome(produto.getNome())
             .build();
     }

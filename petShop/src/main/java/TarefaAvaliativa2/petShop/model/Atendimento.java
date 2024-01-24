@@ -23,7 +23,7 @@ import lombok.ToString;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class  Atendimento {
+public class    Atendimento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,10 +38,12 @@ public class  Atendimento {
     @Column(name = "pagamento_efetuado")
     private Boolean pagamentoEfetuado;
 
-    private Float valorConsulta;
+    private Integer valorConsulta;
 
     @Column(nullable = false, length = 10)
     private String estado;
+
+    private Integer idCliente;
 
     @Column(name = "nome_veterinario")
     private String nomeVeterinario;

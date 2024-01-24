@@ -1,7 +1,7 @@
 package TarefaAvaliativa2.petShop.service;
 
 import TarefaAvaliativa2.petShop.model.Cliente;
-import TarefaAvaliativa2.petShop.repository.ClienteRepositoryImpl;
+import TarefaAvaliativa2.petShop.repository.ClienteRepositoryService;
 import java.util.Collection;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class ClienteService {
 
-    private final ClienteRepositoryImpl clienteRepository;
+    private final ClienteRepositoryService clienteRepository;
 
 
     public Cliente criarNovo(Cliente cliente) {

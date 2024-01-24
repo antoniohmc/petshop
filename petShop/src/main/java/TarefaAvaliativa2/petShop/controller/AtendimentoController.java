@@ -1,31 +1,39 @@
 package TarefaAvaliativa2.petShop.controller;
 
 
+import TarefaAvaliativa2.petShop.controller.atendimento.*;
 import TarefaAvaliativa2.petShop.controller.produto.AdicionarProdutoRequest;
-import TarefaAvaliativa2.petShop.controller.request.IniciarAtendimentoRequest;
-import TarefaAvaliativa2.petShop.controller.request.EditarAtendimentoRequest;
 import TarefaAvaliativa2.petShop.controller.request.AdicionarPagamentoRequest;
-import TarefaAvaliativa2.petShop.controller.response.AtendimentoResponse;
+import TarefaAvaliativa2.petShop.model.Atendimento;
+import TarefaAvaliativa2.petShop.service.AtendimentoService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping(path = "/atendimentos")
 public class
 AtendimentoController {
 
+    private final AtendimentoService atendimentoService;
+
     @PostMapping
-    public void iniciarAtendimento(
+    public IniciarAtendimentoResponse iniciarAtendimento(
             @RequestBody IniciarAtendimentoRequest iniciarAtedimentoRequest
     ) {
+
+        Atendimento model = iniciarAtedimentoRequest.toModel();
+        Atendimento iniciado = atendimentoService.iniciarAtendimento(model);
+
+        return IniciarAtendimentoMapper.mapToInicarAtendimentoResponse(iniciado);
 
     }
 
     @GetMapping
-    public List<AtendimentoResponse> buscarAtendimento(
+    public List<AtendimentoResponse> listarAtendimento(
             @RequestParam(required = false) String estado,
             @RequestParam(required = false) List<String> sort,
             @RequestParam(required = false) LocalDate dataAberturaInicio,
@@ -34,25 +42,19 @@ AtendimentoController {
             @RequestParam(required = false) LocalDate dataEncerramentoFim,
             @RequestParam(required = false) Integer idCliente
     ) {
-        return List.of(
-                AtendimentoResponse.builder()
-                        .id(1)
-                        .id(1)
-                        .dataAbertura(LocalDateTime.now())
-                        .estado("ABERTO")
-                        .valorConsulta(11000)
-                        .nomeAtendente("Flavio")
-                        .nomeVeterinario("Luana")
-                        .idCliente(2)
-                        .build()
-        );
+        return atendimentoService.listarAtendimentos()
+                .stream()
+                .map(AtendimentoMapper::mapToAtendimentoResponse)
+                .toList();
     }
 
     @PatchMapping("/{id}")
-    public void editarAtendimento(
+    public AtendimentoResponse editarAtendimento(
             @PathVariable Integer id,
-            @RequestBody EditarAtendimentoRequest editarRequest
+            @RequestBody EditarAtendimentoRequest editarAtendimentoRequest
     ) {
+        return AtendimentoMapper
+                .mapToAtendimentoResponse(atendimentoService.editarAtendimento(editarAtendimentoRequest.toModel(), id));
 
     }
 

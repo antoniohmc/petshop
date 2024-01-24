@@ -34,6 +34,7 @@ public class EnderecoResponse {
                 .cidade(endereco.getCidade())
                 .numero(endereco.getNumero())
                 .logradouro(endereco.getLogradouro())
+                .estado(endereco.getEstado())
                 .build();
     }
 }

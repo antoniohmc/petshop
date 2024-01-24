@@ -12,17 +12,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ProdutoResponse {
 
-    private Integer id;
-
     private Integer valor;
 
     private String descricao;
 
-    private Integer quantidadeEstoque;
-
     private String nome;
 
-    public Integer getQuantidadeEstoque() {
-        return quantidadeEstoque;
-    }
 }

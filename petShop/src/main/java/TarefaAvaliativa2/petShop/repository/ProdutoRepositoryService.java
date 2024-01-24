@@ -3,11 +3,11 @@ package TarefaAvaliativa2.petShop.repository;
 import TarefaAvaliativa2.petShop.model.Produto;
 import java.util.Collection;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 @RequiredArgsConstructor
-public class ProdutoRepositoryImpl {
+public class ProdutoRepositoryService {
 
     private final ProdutoRepository produtoRepository;
 
@@ -28,8 +28,8 @@ public class ProdutoRepositoryImpl {
         return produtoRepository.findAll();
     }
 
-    public void deletarProduto(Produto produto) {
-        produtoRepository.delete(produto);
+    public void deletarProduto(Integer id) {
+        produtoRepository.deleteById(id);
     }
 
 

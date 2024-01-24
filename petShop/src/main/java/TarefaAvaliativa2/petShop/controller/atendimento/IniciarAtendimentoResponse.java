@@ -1,12 +1,12 @@
-package TarefaAvaliativa2.petShop.controller.request;
+package TarefaAvaliativa2.petShop.controller.atendimento;
 
 import TarefaAvaliativa2.petShop.controller.produto.ProdutosIdRequest;
+import lombok.Builder;
 import lombok.Data;
 
-import java.util.List;
-
 @Data
-public class IniciarAtendimentoRequest {
+@Builder
+public class IniciarAtendimentoResponse {
 
     private String nomeVeterinario;
 
@@ -16,5 +16,5 @@ public class IniciarAtendimentoRequest {
 
     private Integer valorConsulta;
 
-    private List<ProdutosIdRequest> produtosId;
+    private ProdutosIdRequest produto;
 }
