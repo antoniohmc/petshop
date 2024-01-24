@@ -35,6 +35,4 @@ public class Endereco {
 
     private String estado;
 
-    @ManyToOne
-    private Cliente cliente;
 }
