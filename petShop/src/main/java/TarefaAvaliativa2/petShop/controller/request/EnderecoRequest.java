@@ -17,6 +17,7 @@ public class EnderecoRequest {
                 .cidade(cidade)
                 .bairro(bairro)
                 .numero(numero)
+                .estado(estado)
                 .build();
     }
 }
