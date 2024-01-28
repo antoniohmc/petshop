@@ -1,8 +1,8 @@
-package TarefaAvaliativa2.petshop.controller.atendimento;
+package tarefaavaliativa2.petshop.controller.atendimento;
 
-import TarefaAvaliativa2.petshop.model.Atendimento;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
+import tarefaavaliativa2.petshop.model.Atendimento;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class AtendimentoMapper {

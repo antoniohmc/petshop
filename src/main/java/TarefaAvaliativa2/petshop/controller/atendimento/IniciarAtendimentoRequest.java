@@ -1,8 +1,8 @@
-package TarefaAvaliativa2.petshop.controller.atendimento;
+package tarefaavaliativa2.petshop.controller.atendimento;
 
-import TarefaAvaliativa2.petshop.controller.produto.ProdutosIdRequest;
-import TarefaAvaliativa2.petshop.model.Atendimento;
 import lombok.Data;
+import tarefaavaliativa2.petshop.controller.produto.ProdutosIdRequest;
+import tarefaavaliativa2.petshop.model.Atendimento;
 
 import java.util.List;
 

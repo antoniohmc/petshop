@@ -1,4 +1,4 @@
-package TarefaAvaliativa2.petshop;
+package tarefaavaliativa2.petshop;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

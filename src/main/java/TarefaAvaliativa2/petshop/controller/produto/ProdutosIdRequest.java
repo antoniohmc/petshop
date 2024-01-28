@@ -1,7 +1,7 @@
-package TarefaAvaliativa2.petshop.controller.produto;
+package tarefaavaliativa2.petshop.controller.produto;
 
-import TarefaAvaliativa2.petshop.model.Produto;
 import lombok.Data;
+import tarefaavaliativa2.petshop.model.Produto;
 
 @Data
 public class ProdutosIdRequest {

@@ -1,4 +1,4 @@
-package TarefaAvaliativa2.petshop.model;
+package tarefaavaliativa2.petshop.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

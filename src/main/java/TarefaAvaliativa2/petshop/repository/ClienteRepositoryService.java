@@ -1,9 +1,10 @@
-package TarefaAvaliativa2.petshop.repository;
+package tarefaavaliativa2.petshop.repository;
 
-import TarefaAvaliativa2.petshop.model.Cliente;
-import java.util.Collection;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+import tarefaavaliativa2.petshop.model.Cliente;
+
+import java.util.Collection;
 
 @Component
 @RequiredArgsConstructor
@@ -28,7 +29,7 @@ public class ClienteRepositoryService {
 
     public Cliente buscarPorId(Integer id) {
         return clienteRepository.findById(id)
-            .orElseThrow(() -> new RuntimeException("Cliente não encontrado, digite um id válido"));
+                .orElseThrow(() -> new RuntimeException("Cliente não encontrado, digite um id válido"));
     }
 
     public Cliente atualizar(Cliente cliente) {

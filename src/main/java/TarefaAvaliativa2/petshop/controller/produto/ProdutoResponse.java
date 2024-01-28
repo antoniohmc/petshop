@@ -1,4 +1,4 @@
-package TarefaAvaliativa2.petshop.controller.produto;
+package tarefaavaliativa2.petshop.controller.produto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

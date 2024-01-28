@@ -1,8 +1,8 @@
-package TarefaAvaliativa2.petshop.controller.produto;
+package tarefaavaliativa2.petshop.controller.produto;
 
-import TarefaAvaliativa2.petshop.model.Produto;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
+import tarefaavaliativa2.petshop.model.Produto;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ProdutoMapper {
@@ -10,10 +10,10 @@ public class ProdutoMapper {
     public static ProdutoResponse mapToProdutoResponse(Produto produto) {
 
         return ProdutoResponse.builder()
-            .valor(produto.getValor())
-            .descricao(produto.getDescricao())
-            .nome(produto.getNome())
-            .build();
+                .valor(produto.getValor())
+                .descricao(produto.getDescricao())
+                .nome(produto.getNome())
+                .build();
     }
 
 }

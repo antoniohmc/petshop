@@ -1,8 +1,8 @@
-package TarefaAvaliativa2.petshop.controller.cliente;
+package tarefaavaliativa2.petshop.controller.cliente;
 
-import TarefaAvaliativa2.petshop.controller.request.EnderecoRequest;
-import TarefaAvaliativa2.petshop.model.Cliente;
 import lombok.Data;
+import tarefaavaliativa2.petshop.controller.request.EnderecoRequest;
+import tarefaavaliativa2.petshop.model.Cliente;
 
 import java.util.List;
 
@@ -17,9 +17,9 @@ public class ClienteRequest {
 
     public Cliente toModel() {
         return Cliente.builder()
-            .nome(nome)
-            .cpf(cpf)
-            .enderecos(List.of(endereco.toModel()))
-            .build();
+                .nome(nome)
+                .cpf(cpf)
+                .enderecos(List.of(endereco.toModel()))
+                .build();
     }
 }

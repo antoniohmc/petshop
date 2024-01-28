@@ -1,9 +1,10 @@
-package TarefaAvaliativa2.petshop.repository;
+package tarefaavaliativa2.petshop.repository;
 
-import TarefaAvaliativa2.petshop.model.Produto;
-import java.util.Collection;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import tarefaavaliativa2.petshop.model.Produto;
+
+import java.util.Collection;
 
 @Service
 @RequiredArgsConstructor
@@ -17,7 +18,7 @@ public class ProdutoRepositoryService {
 
     public Produto buscarPorId(Integer id) {
         return produtoRepository.findById(id)
-            .orElseThrow(() -> new RuntimeException("Produto não encontrado, digite um id válido"));
+                .orElseThrow(() -> new RuntimeException("Produto não encontrado, digite um id válido"));
     }
 
     public Produto atualizar(Produto produto) {

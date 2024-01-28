@@ -1,10 +1,11 @@
-package TarefaAvaliativa2.petshop.service;
+package tarefaavaliativa2.petshop.service;
 
-import TarefaAvaliativa2.petshop.model.Cliente;
-import TarefaAvaliativa2.petshop.repository.ClienteRepositoryService;
-import java.util.Collection;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import tarefaavaliativa2.petshop.model.Cliente;
+import tarefaavaliativa2.petshop.repository.ClienteRepositoryService;
+
+import java.util.Collection;
 
 @Service
 @RequiredArgsConstructor

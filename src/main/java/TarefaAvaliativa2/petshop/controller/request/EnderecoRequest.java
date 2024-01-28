@@ -1,7 +1,7 @@
-package TarefaAvaliativa2.petshop.controller.request;
+package tarefaavaliativa2.petshop.controller.request;
 
-import TarefaAvaliativa2.petshop.model.Endereco;
 import lombok.Data;
+import tarefaavaliativa2.petshop.model.Endereco;
 
 @Data
 public class EnderecoRequest {

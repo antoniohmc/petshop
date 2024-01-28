@@ -1,4 +1,4 @@
-package TarefaAvaliativa2.petshop;
+package tarefaavaliativa2.petshop;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.convert.converter.Converter;

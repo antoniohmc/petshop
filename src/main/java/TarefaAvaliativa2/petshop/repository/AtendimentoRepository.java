@@ -1,7 +1,7 @@
-package TarefaAvaliativa2.petshop.repository;
+package tarefaavaliativa2.petshop.repository;
 
-import TarefaAvaliativa2.petshop.model.Atendimento;
 import org.springframework.data.jpa.repository.JpaRepository;
+import tarefaavaliativa2.petshop.model.Atendimento;
 
-public interface AtendimentoRepository extends JpaRepository<Atendimento , Integer> {
+public interface AtendimentoRepository extends JpaRepository<Atendimento, Integer> {
 }

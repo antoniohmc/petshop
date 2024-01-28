@@ -1,10 +1,11 @@
-package TarefaAvaliativa2.petshop.service;
+package tarefaavaliativa2.petshop.service;
 
-import TarefaAvaliativa2.petshop.model.Produto;
-import TarefaAvaliativa2.petshop.repository.ProdutoRepositoryService;
-import java.util.Collection;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import tarefaavaliativa2.petshop.model.Produto;
+import tarefaavaliativa2.petshop.repository.ProdutoRepositoryService;
+
+import java.util.Collection;
 
 @Service
 @RequiredArgsConstructor
@@ -12,7 +13,7 @@ public class ProdutoService {
 
     private final ProdutoRepositoryService produtoRepository;
 
-    public Produto criarNovoProduto(Produto produto)     {
+    public Produto criarNovoProduto(Produto produto) {
         return produtoRepository.criarNovo(produto);
     }
 

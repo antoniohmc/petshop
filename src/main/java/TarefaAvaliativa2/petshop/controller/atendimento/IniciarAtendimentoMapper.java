@@ -1,14 +1,14 @@
-package TarefaAvaliativa2.petshop.controller.atendimento;
+package tarefaavaliativa2.petshop.controller.atendimento;
 
-import TarefaAvaliativa2.petshop.controller.produto.ProdutosIdRequest;
-import TarefaAvaliativa2.petshop.model.Atendimento;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
+import tarefaavaliativa2.petshop.controller.produto.ProdutosIdRequest;
+import tarefaavaliativa2.petshop.model.Atendimento;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class IniciarAtendimentoMapper {
 
-    public static IniciarAtendimentoResponse mapToInicarAtendimentoResponse (Atendimento atendimento) {
+    public static IniciarAtendimentoResponse mapToInicarAtendimentoResponse(Atendimento atendimento) {
         return IniciarAtendimentoResponse.builder()
                 .nomeVeterinario(atendimento.getNomeVeterinario())
                 .nomeAtendente(atendimento.getNomeAtendente())

@@ -1,11 +1,11 @@
-package TarefaAvaliativa2.petshop.controller.atendimento;
+package tarefaavaliativa2.petshop.controller.atendimento;
 
-import TarefaAvaliativa2.petshop.controller.produto.ProdutoResponse;
 import lombok.Builder;
 import lombok.Data;
+import tarefaavaliativa2.petshop.controller.produto.ProdutoResponse;
 
 import java.time.LocalDateTime;
-import java.util.List;
+import java.util.Collection;
 
 @Data
 @Builder
@@ -29,5 +29,5 @@ public class AtendimentoResponse {
 
     private LocalDateTime dataEncerramento;
 
-    private List<ProdutoResponse> produtos;
+    private Collection<ProdutoResponse> produtos;
 }

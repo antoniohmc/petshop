@@ -1,4 +1,4 @@
-package TarefaAvaliativa2.petshop.model;
+package tarefaavaliativa2.petshop.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -7,14 +7,15 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
-import java.time.LocalDateTime;
-import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+
+import java.time.LocalDateTime;
+import java.util.Collection;
 
 @Entity
 @Getter
@@ -23,7 +24,7 @@ import lombok.ToString;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class    Atendimento {
+public class Atendimento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,7 +33,7 @@ public class    Atendimento {
     @Column(name = "data_abertura")
     private LocalDateTime dataAbertura;
 
-    @Column(name = "nome_Atendente" )
+    @Column(name = "nome_Atendente")
     private String nomeAtendente;
 
     @Column(name = "pagamento_efetuado")
@@ -61,6 +62,6 @@ public class    Atendimento {
     private Pet pets;
 
     @ManyToMany
-    private List<Produto> produtos;
+    private Collection<Produto> produtos;
 
 }

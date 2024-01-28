@@ -1,13 +1,25 @@
-package TarefaAvaliativa2.petshop.controller;
+package tarefaavaliativa2.petshop.controller;
 
-
-import TarefaAvaliativa2.petshop.controller.atendimento.*;
-import TarefaAvaliativa2.petshop.controller.produto.AdicionarProdutoRequest;
-import TarefaAvaliativa2.petshop.controller.request.AdicionarPagamentoRequest;
-import TarefaAvaliativa2.petshop.model.Atendimento;
-import TarefaAvaliativa2.petshop.service.AtendimentoService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import tarefaavaliativa2.petshop.controller.atendimento.AtendimentoMapper;
+import tarefaavaliativa2.petshop.controller.atendimento.AtendimentoResponse;
+import tarefaavaliativa2.petshop.controller.atendimento.EditarAtendimentoRequest;
+import tarefaavaliativa2.petshop.controller.atendimento.IniciarAtendimentoMapper;
+import tarefaavaliativa2.petshop.controller.atendimento.IniciarAtendimentoRequest;
+import tarefaavaliativa2.petshop.controller.atendimento.IniciarAtendimentoResponse;
+import tarefaavaliativa2.petshop.controller.produto.AdicionarProdutoRequest;
+import tarefaavaliativa2.petshop.controller.request.AdicionarPagamentoRequest;
+import tarefaavaliativa2.petshop.model.Atendimento;
+import tarefaavaliativa2.petshop.service.AtendimentoService;
 
 import java.time.LocalDate;
 import java.util.List;

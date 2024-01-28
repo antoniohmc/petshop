@@ -1,8 +1,8 @@
-package TarefaAvaliativa2.petshop.repository;
+package tarefaavaliativa2.petshop.repository;
 
-import TarefaAvaliativa2.petshop.model.Atendimento;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+import tarefaavaliativa2.petshop.model.Atendimento;
 
 import java.util.Collection;
 

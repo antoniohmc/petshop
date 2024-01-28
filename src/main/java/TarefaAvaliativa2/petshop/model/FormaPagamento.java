@@ -1,4 +1,4 @@
-package TarefaAvaliativa2.petshop.model;
+package tarefaavaliativa2.petshop.model;
 
 public enum FormaPagamento {
     CREDITO,

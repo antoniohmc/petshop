@@ -1,7 +1,7 @@
-package TarefaAvaliativa2.petshop.controller.produto;
+package tarefaavaliativa2.petshop.controller.produto;
 
-import TarefaAvaliativa2.petshop.model.Produto;
 import lombok.Data;
+import tarefaavaliativa2.petshop.model.Produto;
 
 @Data
 public class ProdutoRequest {
@@ -14,10 +14,10 @@ public class ProdutoRequest {
 
     public Produto toModel() {
         return Produto.builder()
-            .nome(nome)
-            .valor(valor)
-            .descricao(descricao)
-            .build();
+                .nome(nome)
+                .valor(valor)
+                .descricao(descricao)
+                .build();
     }
 
 }

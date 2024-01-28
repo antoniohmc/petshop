@@ -1,8 +1,8 @@
-package TarefaAvaliativa2.petshop.controller.response;
+package tarefaavaliativa2.petshop.controller.response;
 
-import TarefaAvaliativa2.petshop.model.Endereco;
 import lombok.Builder;
 import lombok.Data;
+import tarefaavaliativa2.petshop.model.Endereco;
 
 import java.util.List;
 

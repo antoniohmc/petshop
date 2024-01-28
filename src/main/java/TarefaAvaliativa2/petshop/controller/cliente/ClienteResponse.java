@@ -1,7 +1,10 @@
-package TarefaAvaliativa2.petshop.controller.cliente;
+package tarefaavaliativa2.petshop.controller.cliente;
 
-import TarefaAvaliativa2.petshop.controller.response.EnderecoResponse;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import tarefaavaliativa2.petshop.controller.response.EnderecoResponse;
 
 import java.util.List;
 
