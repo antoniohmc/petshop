@@ -1,15 +1,14 @@
-package tarefaavaliativa2.petshop.controller.response;
+package tarefaavaliativa2.petshop.controller.cliente;
 
 import lombok.Builder;
 import lombok.Data;
-import tarefaavaliativa2.petshop.model.Endereco;
+import tarefaavaliativa2.petshop.model.cliente.Endereco;
 
-import java.util.List;
+import java.util.Collection;
 
 @Data
 @Builder
 public class EnderecoResponse {
-    private Integer id;
 
     private String logradouro;
 
@@ -21,7 +20,7 @@ public class EnderecoResponse {
 
     private String estado;
 
-    public static List<EnderecoResponse> of(List<Endereco> endereco) {
+    public static Collection<EnderecoResponse> of(Collection<Endereco> endereco) {
         return endereco.stream()
                 .map(EnderecoResponse::of)
                 .toList();
@@ -29,7 +28,6 @@ public class EnderecoResponse {
 
     public static EnderecoResponse of(Endereco endereco) {
         return EnderecoResponse.builder()
-                .id(endereco.getId())
                 .bairro(endereco.getBairro())
                 .cidade(endereco.getCidade())
                 .numero(endereco.getNumero())

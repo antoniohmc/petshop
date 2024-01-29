@@ -1,23 +1,23 @@
 package tarefaavaliativa2.petshop.controller.request;
 
-import lombok.Data;
-import tarefaavaliativa2.petshop.model.Endereco;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Value;
 
-@Data
+import static lombok.AccessLevel.PRIVATE;
+
+@Value
+@Builder
+@AllArgsConstructor(access = PRIVATE)
 public class EnderecoRequest {
-    private String logradouro;
-    private Integer numero;
-    private String bairro;
-    private String cidade;
-    private String estado;
 
-    public Endereco toModel() {
-        return Endereco.builder()
-                .logradouro(logradouro)
-                .cidade(cidade)
-                .bairro(bairro)
-                .numero(numero)
-                .estado(estado)
-                .build();
-    }
+    String bairro;
+
+    String cidade;
+
+    String estado;
+
+    Integer numero;
+
+    String logradouro;
 }

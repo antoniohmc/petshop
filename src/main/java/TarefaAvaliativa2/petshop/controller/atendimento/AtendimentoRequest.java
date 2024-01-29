@@ -2,6 +2,7 @@ package tarefaavaliativa2.petshop.controller.atendimento;
 
 import tarefaavaliativa2.petshop.model.Produto;
 
+import java.util.Collection;
 import java.util.List;
 
 public class AtendimentoRequest {
@@ -14,7 +15,7 @@ public class AtendimentoRequest {
 
     private Integer valorConsulta;
 
-    private List<Produto> produtos;
+    private Collection<Produto> produtos;
 
 
 }

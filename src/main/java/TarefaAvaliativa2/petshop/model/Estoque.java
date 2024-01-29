@@ -7,15 +7,16 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+
+import java.time.LocalDateTime;
+import java.util.Collection;
+import java.util.Date;
 
 @Entity
 @Getter
@@ -43,7 +44,7 @@ public class Estoque {
     private String lote;
 
     @OneToMany
-    private List<Produto> produto;
+    private Collection<Produto> produto;
 
 
 }

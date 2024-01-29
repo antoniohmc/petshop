@@ -18,7 +18,7 @@ import tarefaavaliativa2.petshop.controller.produto.ProdutoResponse;
 import tarefaavaliativa2.petshop.model.Produto;
 import tarefaavaliativa2.petshop.service.ProdutoService;
 
-import java.util.List;
+import java.util.Collection;
 
 @RequiredArgsConstructor
 @RestController
@@ -48,9 +48,9 @@ public class ProdutoController {
 
 
     @GetMapping
-    public List<ProdutoResponse> listarProdutos(@RequestParam(required = false) String nome,
-                                                @RequestParam(required = false) Integer precoMaiorQue,
-                                                @RequestParam(required = false) Integer precoMenorQue) {
+    public Collection<ProdutoResponse> listarProdutos(@RequestParam(required = false) String nome,
+                                                      @RequestParam(required = false) Integer precoMaiorQue,
+                                                      @RequestParam(required = false) Integer precoMenorQue) {
 
         return produtoService.listarProdutos()
                 .stream()

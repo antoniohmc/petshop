@@ -1,7 +1,8 @@
 package tarefaavaliativa2.petshop.controller.produto;
 
-import java.util.List;
+import java.util.Collection;
 
 public class AdicionarProdutoRequest {
-    private List<Integer> id;
+
+    private Collection<Integer> id;
 }

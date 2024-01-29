@@ -22,7 +22,7 @@ import tarefaavaliativa2.petshop.model.Atendimento;
 import tarefaavaliativa2.petshop.service.AtendimentoService;
 
 import java.time.LocalDate;
-import java.util.List;
+import java.util.Collection;
 
 @RestController
 @RequiredArgsConstructor
@@ -45,9 +45,9 @@ AtendimentoController {
     }
 
     @GetMapping
-    public List<AtendimentoResponse> listarAtendimento(
+    public Collection<AtendimentoResponse> listarAtendimento(
             @RequestParam(required = false) String estado,
-            @RequestParam(required = false) List<String> sort,
+            @RequestParam(required = false) Collection<String> sort,
             @RequestParam(required = false) LocalDate dataAberturaInicio,
             @RequestParam(required = false) LocalDate dataAberturaFim,
             @RequestParam(required = false) LocalDate dataEncerramentoInicio,

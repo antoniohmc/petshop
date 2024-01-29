@@ -7,6 +7,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
 import jakarta.persistence.OneToMany;
+
+import java.util.Collection;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -30,5 +32,5 @@ public class TipoAnimal {
     private Integer id;
 
     @OneToMany
-    private List<Produto> produtos;
+    private Collection<Produto> produtos;
 }

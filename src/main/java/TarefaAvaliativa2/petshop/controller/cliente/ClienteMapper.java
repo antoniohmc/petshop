@@ -2,19 +2,27 @@ package tarefaavaliativa2.petshop.controller.cliente;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
-import tarefaavaliativa2.petshop.controller.response.EnderecoResponse;
-import tarefaavaliativa2.petshop.model.Cliente;
+import tarefaavaliativa2.petshop.model.cliente.Cliente;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class ClienteMapper {
+class ClienteMapper {
 
-    public static ClienteResponse mapToClienteResponse(Cliente cliente) {
+    static ClienteResponse mapToClienteResponse(Cliente cliente) {
 
         return ClienteResponse.builder()
                 .id(cliente.getId())
                 .nome(cliente.getNome())
                 .cpf(cliente.getCpf())
-                .endereco(EnderecoResponse.of(cliente.getEnderecos()))
+                .enderecos(EnderecoMapper.mapToEnderecoResponse(cliente.getEnderecos()))
+                .build();
+    }
+
+    static Cliente mapToCliente(ClienteRequest request) {
+
+        return Cliente.builder()
+                .nome(request.getNome())
+                .cpf(request.getCpf())
+                .enderecos(EnderecoMapper.mapToEndereco(request.getEnderecos()))
                 .build();
     }
 
