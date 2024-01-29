@@ -2,23 +2,23 @@ package tarefaavaliativa2.petshop.controller.cliente;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Value;
 
 import java.util.Collection;
 
-@Data
+import static lombok.AccessLevel.PRIVATE;
+
+@Value
 @Builder
-@AllArgsConstructor
-@NoArgsConstructor
+@AllArgsConstructor(access = PRIVATE)
 class ClienteResponse {
 
-    private Integer id;
+    Integer id;
 
-    private String cpf;
+    String cpf;
 
-    private String nome;
+    String nome;
 
-    private Collection<EnderecoResponse> enderecos;
+    Collection<EnderecoResponse> enderecos;
 
 }

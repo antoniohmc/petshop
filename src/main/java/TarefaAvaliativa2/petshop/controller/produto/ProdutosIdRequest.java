@@ -1,25 +1,22 @@
 package tarefaavaliativa2.petshop.controller.produto;
 
-import lombok.Data;
-import tarefaavaliativa2.petshop.model.Produto;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Value;
 
-@Data
-public class ProdutosIdRequest {
+import static lombok.AccessLevel.PRIVATE;
 
-    private Integer id;
+@Value
+@Builder
+@AllArgsConstructor(access = PRIVATE)
+class ProdutosIdRequest {
 
-    private String nome;
+    Integer id;
 
-    private Integer valor;
+    String nome;
 
-    private String descricao;
+    Integer valor;
 
-    public Produto toModel() {
-        return Produto.builder()
-                .id(id)
-                .nome(nome)
-                .descricao(descricao)
-                .valor(valor)
-                .build();
-    }
+    String descricao;
+
 }

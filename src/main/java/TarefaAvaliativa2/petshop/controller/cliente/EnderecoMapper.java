@@ -1,7 +1,6 @@
 package tarefaavaliativa2.petshop.controller.cliente;
 
 import lombok.NoArgsConstructor;
-import tarefaavaliativa2.petshop.controller.request.EnderecoRequest;
 import tarefaavaliativa2.petshop.model.cliente.Endereco;
 
 import java.util.Collection;

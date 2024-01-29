@@ -1,4 +1,4 @@
-package tarefaavaliativa2.petshop.controller.request;
+package tarefaavaliativa2.petshop.controller.cliente;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,7 @@ import static lombok.AccessLevel.PRIVATE;
 @Value
 @Builder
 @AllArgsConstructor(access = PRIVATE)
-public class EnderecoRequest {
+class EnderecoRequest {
 
     String bairro;
 

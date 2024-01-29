@@ -1,38 +1,24 @@
 package tarefaavaliativa2.petshop.controller.cliente;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
-import tarefaavaliativa2.petshop.model.cliente.Endereco;
+import lombok.Value;
 
-import java.util.Collection;
+import static lombok.AccessLevel.PRIVATE;
 
-@Data
+@Value
 @Builder
-public class EnderecoResponse {
+@AllArgsConstructor(access = PRIVATE)
+class EnderecoResponse {
 
-    private String logradouro;
+    String logradouro;
 
-    private Integer numero;
+    Integer numero;
 
-    private String bairro;
+    String bairro;
 
-    private String cidade;
+    String cidade;
 
-    private String estado;
+    String estado;
 
-    public static Collection<EnderecoResponse> of(Collection<Endereco> endereco) {
-        return endereco.stream()
-                .map(EnderecoResponse::of)
-                .toList();
-    }
-
-    public static EnderecoResponse of(Endereco endereco) {
-        return EnderecoResponse.builder()
-                .bairro(endereco.getBairro())
-                .cidade(endereco.getCidade())
-                .numero(endereco.getNumero())
-                .logradouro(endereco.getLogradouro())
-                .estado(endereco.getEstado())
-                .build();
-    }
 }

@@ -12,17 +12,17 @@ public class ClientePersistenceService {
 
     private final ClienteRepository clienteRepository;
 
-    public Cliente criarCliente(Cliente cliente) {
+    public Cliente criar(Cliente cliente) {
 
         return clienteRepository.save(cliente);
     }
 
-    public Collection<Cliente> listarClientes() {
+    public Collection<Cliente> buscarClientes() {
 
         return clienteRepository.findAll();
     }
 
-    public void excluirCliente(Integer id) {
+    public void excluirPorId(Integer id) {
 
         clienteRepository.deleteById(id);
     }
@@ -34,7 +34,7 @@ public class ClientePersistenceService {
                 .orElseThrow(() -> new RuntimeException("Nenhum cliente encontrado para o id informado: " + id));
     }
 
-    public Cliente atualizarCliente(Cliente cliente) {
+    public Cliente atualizar(Cliente cliente) {
 
         return clienteRepository.saveAndFlush(cliente);
     }

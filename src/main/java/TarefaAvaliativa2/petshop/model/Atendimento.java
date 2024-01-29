@@ -14,6 +14,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import tarefaavaliativa2.petshop.model.cliente.Cliente;
+import tarefaavaliativa2.petshop.model.produto.Produto;
 
 import java.time.LocalDateTime;
 import java.util.Collection;

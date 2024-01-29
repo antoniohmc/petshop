@@ -1,4 +1,4 @@
-package tarefaavaliativa2.petshop.controller.produto;
+package tarefaavaliativa2.petshop.controller.atendimento;
 
 import java.util.Collection;
 

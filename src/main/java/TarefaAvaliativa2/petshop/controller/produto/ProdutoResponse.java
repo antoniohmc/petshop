@@ -2,19 +2,23 @@ package tarefaavaliativa2.petshop.controller.produto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Value;
 
-@Data
+import static lombok.AccessLevel.PRIVATE;
+
+@Value
 @Builder
-@AllArgsConstructor
-@NoArgsConstructor
-public class ProdutoResponse {
+@AllArgsConstructor(access = PRIVATE)
+class ProdutoResponse {
 
-    private Integer valor;
+    Integer id;
 
-    private String descricao;
+    Integer valor;
 
-    private String nome;
+    String descricao;
+
+    String nome;
+
+    QuantidadeEstoqueResponse quantidadeEstoque;
 
 }

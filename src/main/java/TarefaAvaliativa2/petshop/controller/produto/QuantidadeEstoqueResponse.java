@@ -11,14 +11,9 @@ import static lombok.AccessLevel.PRIVATE;
 @Value
 @Builder
 @AllArgsConstructor(access = PRIVATE)
-class ProdutoRequest {
+class QuantidadeEstoqueResponse {
 
-    String nome;
+    Integer id;
 
-    Integer valor;
-
-    String descricao;
-
-    BigInteger quantidadeEstoque;
-
+    BigInteger quantidadeAtual;
 }

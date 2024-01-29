@@ -1,4 +1,4 @@
-package tarefaavaliativa2.petshop.controller.request;
+package tarefaavaliativa2.petshop.controller.atendimento;
 
 import lombok.Data;
 import tarefaavaliativa2.petshop.model.FormaPagamento;

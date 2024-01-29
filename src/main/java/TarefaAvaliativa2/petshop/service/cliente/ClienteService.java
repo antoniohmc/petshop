@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import tarefaavaliativa2.petshop.model.cliente.Cliente;
 import tarefaavaliativa2.petshop.repository.cliente.ClientePersistenceService;
-import tarefaavaliativa2.petshop.repository.cliente.ClienteRepository;
 
 import java.util.Collection;
 
@@ -14,33 +13,32 @@ public class ClienteService {
 
     private final ClientePersistenceService clientePersistenceService;
 
-    public Cliente criarCliente(Cliente cliente) {
+    public Cliente criar(Cliente cliente) {
 
-        return clientePersistenceService.criarCliente(cliente);
+        return clientePersistenceService.criar(cliente);
     }
 
+    public Collection<Cliente> buscarClientes() {
 
-    public Collection<Cliente> listaDeClientes() {
-
-        return clientePersistenceService.listarClientes();
+        return clientePersistenceService.buscarClientes();
     }
 
-    public void deletarCliente(Integer id) {
+    public void excluirPorId(Integer id) {
 
-        clientePersistenceService.excluirCliente(id);
+        clientePersistenceService.excluirPorId(id);
     }
 
-    public Cliente atualizarCliente(Integer id, Cliente cliente) {
+    public Cliente atualizar(Integer id, Cliente cliente) {
 
-        Cliente clienteExistente = clientePersistenceService.buscarPorId(id);
+        Cliente existente = clientePersistenceService.buscarPorId(id);
 
-        Cliente clienteAtualizado = Cliente.builder()
-                .id(clienteExistente.getId())
+        Cliente atualizado = Cliente.builder()
+                .id(existente.getId())
                 .cpf(cliente.getCpf())
                 .nome(cliente.getNome())
                 .enderecos(cliente.getEnderecos())
                 .build();
 
-        return clientePersistenceService.atualizarCliente(clienteAtualizado);
+        return clientePersistenceService.atualizar(atualizado);
     }
 }

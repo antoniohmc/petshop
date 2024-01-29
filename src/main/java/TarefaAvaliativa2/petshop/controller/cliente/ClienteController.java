@@ -28,19 +28,19 @@ class ClienteController {
 
     @PostMapping
     @ResponseStatus(CREATED)
-    ClienteResponse criarCliente(@RequestBody ClienteRequest request) {
+    ClienteResponse criar(@RequestBody ClienteRequest request) {
 
         Cliente cliente = ClienteMapper.mapToCliente(request);
-        Cliente salvo = clienteService.criarCliente(cliente);
+        Cliente salvo = clienteService.criar(cliente);
 
         return ClienteMapper.mapToClienteResponse(salvo);
     }
 
     @GetMapping
     @ResponseStatus(OK)
-    Collection<ClienteResponse> listarClientes() {
+    Collection<ClienteResponse> buscarClientes() {
 
-        return clienteService.listaDeClientes()
+        return clienteService.buscarClientes()
                 .stream()
                 .map(ClienteMapper::mapToClienteResponse)
                 .toList();
@@ -48,17 +48,17 @@ class ClienteController {
 
     @ResponseStatus(NO_CONTENT)
     @DeleteMapping(path = "/{id}")
-    void excluirCliente(@PathVariable Integer id) {
+    void excluir(@PathVariable Integer id) {
 
-        clienteService.deletarCliente(id);
+        clienteService.excluirPorId(id);
     }
 
     @ResponseStatus(OK)
     @PutMapping(path = "/{id}")
-    ClienteResponse atualizarCliente(@PathVariable Integer id, @RequestBody ClienteRequest request) {
+    ClienteResponse atualizar(@PathVariable Integer id, @RequestBody ClienteRequest request) {
 
         Cliente cliente = ClienteMapper.mapToCliente(request);
-        Cliente atualizado = clienteService.atualizarCliente(id, cliente);
+        Cliente atualizado = clienteService.atualizar(id, cliente);
 
         return ClienteMapper.mapToClienteResponse(atualizado);
     }

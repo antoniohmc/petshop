@@ -1,9 +1,8 @@
 package tarefaavaliativa2.petshop.controller.atendimento;
 
-import tarefaavaliativa2.petshop.model.Produto;
+import tarefaavaliativa2.petshop.model.produto.Produto;
 
 import java.util.Collection;
-import java.util.List;
 
 public class AtendimentoRequest {
 
