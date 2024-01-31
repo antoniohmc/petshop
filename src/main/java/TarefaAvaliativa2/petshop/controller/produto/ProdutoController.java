@@ -47,7 +47,6 @@ class ProdutoController {
         return ProdutoMapper.mapToProdutoResponse(atualizado);
     }
 
-
     @GetMapping
     @ResponseStatus(OK)
     Collection<ProdutoResponse> buscarProdutos(@RequestParam(required = false) String nome,

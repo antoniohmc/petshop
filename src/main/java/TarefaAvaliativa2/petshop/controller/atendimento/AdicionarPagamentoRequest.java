@@ -1,10 +1,10 @@
 package tarefaavaliativa2.petshop.controller.atendimento;
 
 import lombok.Data;
-import tarefaavaliativa2.petshop.model.FormaPagamento;
+import tarefaavaliativa2.petshop.model.atendimento.FormaPagamento;
 
 @Data
-public class AdicionarPagamentoRequest {
+class AdicionarPagamentoRequest {
 
     private Integer valorPago;
 

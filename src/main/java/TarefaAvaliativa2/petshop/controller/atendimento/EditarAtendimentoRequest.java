@@ -1,10 +1,10 @@
 package tarefaavaliativa2.petshop.controller.atendimento;
 
 import lombok.Data;
-import tarefaavaliativa2.petshop.model.Atendimento;
+import tarefaavaliativa2.petshop.model.atendimento.Atendimento;
 
 @Data
-public class EditarAtendimentoRequest {
+class EditarAtendimentoRequest {
 
     private Integer id;
 

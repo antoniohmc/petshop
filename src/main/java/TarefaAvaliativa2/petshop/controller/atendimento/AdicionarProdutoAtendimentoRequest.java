@@ -4,25 +4,15 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Value;
 
-import java.time.LocalDateTime;
+import java.util.Collection;
 
 import static lombok.AccessLevel.PRIVATE;
 
 @Value
 @Builder
 @AllArgsConstructor(access = PRIVATE)
-class AtendimentoResponse {
+public class AdicionarProdutoAtendimentoRequest {
 
-    Integer id;
-
-    String status;
-
-    String nomeAtendente;
-
-    Boolean pagamentoEfetuado;
-
-    LocalDateTime dataAbertura;
-
-    LocalDateTime dataEncerramento;
+    Collection<Integer> produtosId;
 
 }

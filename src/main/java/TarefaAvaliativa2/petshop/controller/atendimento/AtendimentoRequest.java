@@ -1,20 +1,23 @@
 package tarefaavaliativa2.petshop.controller.atendimento;
 
-import tarefaavaliativa2.petshop.model.produto.Produto;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Value;
 
 import java.util.Collection;
 
-public class AtendimentoRequest {
+import static lombok.AccessLevel.PRIVATE;
 
-    private String nomeVeterinaro;
+@Value
+@Builder
+@AllArgsConstructor(access = PRIVATE)
+class AtendimentoRequest {
 
-    private String nomeAtendente;
+    Integer clienteId;
 
-    private Integer idCliente;
+    String nomeAtendente;
 
-    private Integer valorConsulta;
-
-    private Collection<Produto> produtos;
+    Collection<AtendimentoProdutoRequest> atendimentoProdutos;
 
 
 }

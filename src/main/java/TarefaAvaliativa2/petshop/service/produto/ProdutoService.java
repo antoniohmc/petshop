@@ -23,7 +23,7 @@ public class ProdutoService {
 
         Produto existente = produtoPersistenceService.buscarPorId(id);
 
-        Produto atualizacao = Produto.builder()
+        Produto atualizado = Produto.builder()
                 .id(existente.getId())
                 .nome(produto.getNome())
                 .valor(produto.getValor())
@@ -34,12 +34,17 @@ public class ProdutoService {
                         .build())
                 .build();
 
-        return produtoPersistenceService.atualizar(atualizacao);
+        return produtoPersistenceService.atualizar(atualizado);
     }
 
     public Collection<Produto> buscarProdutos(String nome, Integer valorMenorQue, Integer valorMaiorQue) {
 
         return produtoPersistenceService.buscarProdutos(nome, valorMenorQue, valorMaiorQue);
+    }
+
+    public Produto buscarProdutoPorId(Integer produtosId) {
+
+        return produtoPersistenceService.buscarPorId(produtosId);
     }
 
     public void excluir(Integer id) {

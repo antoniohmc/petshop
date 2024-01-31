@@ -1,4 +1,4 @@
-package tarefaavaliativa2.petshop.controller.produto;
+package tarefaavaliativa2.petshop.model.atendimento;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,14 +9,9 @@ import static lombok.AccessLevel.PRIVATE;
 @Value
 @Builder
 @AllArgsConstructor(access = PRIVATE)
-public class ProdutosIdRequest {
+public class ProdutoSolicitado {
 
-    Integer id;
+    Integer quantidade;
 
-    String nome;
-
-    Integer valor;
-
-    String descricao;
-
+    Integer produtoId;
 }

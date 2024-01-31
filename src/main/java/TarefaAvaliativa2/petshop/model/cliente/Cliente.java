@@ -39,5 +39,4 @@ public class Cliente {
     @JoinColumn(name = "cliente_id", referencedColumnName = "id")
     private Collection<Endereco> enderecos;
 
-
 }

@@ -1,4 +1,4 @@
-package tarefaavaliativa2.petshop.model;
+package tarefaavaliativa2.petshop.model.atendimento;
 
 import jakarta.persistence.*;
 import lombok.*;

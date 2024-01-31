@@ -23,6 +23,11 @@ public class ClienteService {
         return clientePersistenceService.buscarClientes();
     }
 
+    public Cliente buscarPorId(Integer id) {
+
+        return clientePersistenceService.buscarPorId(id);
+    }
+
     public void excluirPorId(Integer id) {
 
         clientePersistenceService.excluirPorId(id);

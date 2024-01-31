@@ -7,12 +7,16 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import tarefaavaliativa2.petshop.model.atendimento.AtendimentoProduto;
+
+import java.util.Collection;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
 import static lombok.AccessLevel.PRIVATE;
@@ -42,5 +46,8 @@ public class Produto {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "quantidade_estoque_id")
     private QuantidadeEstoque quantidadeEstoque;
+
+    @OneToMany(mappedBy = "produto", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Collection<AtendimentoProduto> atendimentos;
 
 }

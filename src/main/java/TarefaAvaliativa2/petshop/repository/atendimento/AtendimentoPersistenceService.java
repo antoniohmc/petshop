@@ -1,25 +1,26 @@
-package tarefaavaliativa2.petshop.repository;
+package tarefaavaliativa2.petshop.repository.atendimento;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-import tarefaavaliativa2.petshop.model.Atendimento;
+import tarefaavaliativa2.petshop.model.atendimento.Atendimento;
 
 import java.util.Collection;
 
 @Component
 @RequiredArgsConstructor
-public class AtendimentoRepositoryService {
+public class AtendimentoPersistenceService {
+
     private final AtendimentoRepository atendimentoRepository;
 
-    public Atendimento iniciarAtendimento(Atendimento atendimento) {
-        return atendimentoRepository.save(atendimento);
+    public Atendimento iniciar(Atendimento atendimento) {
 
+        return atendimentoRepository.save(atendimento);
     }
 
-    public Collection<Atendimento> listarAtendimentos() {
+    public Collection<Atendimento> buscarAtendimentos() {
+
         return atendimentoRepository.findAll();
     }
-
 
     public Atendimento buscarPorId(Integer id) {
         return atendimentoRepository.findById(id)
@@ -27,6 +28,7 @@ public class AtendimentoRepositoryService {
     }
 
     public Atendimento atualizar(Atendimento atendimento) {
-        return iniciarAtendimento(atendimento);
+
+        return atendimentoRepository.saveAndFlush(atendimento);
     }
 }
