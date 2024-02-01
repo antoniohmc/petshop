@@ -19,8 +19,6 @@ import static lombok.AccessLevel.PRIVATE;
 @Entity
 @Getter
 @Builder
-@ToString
-@EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor(access = PRIVATE)
 public class AtendimentoProduto {

@@ -16,10 +16,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import tarefaavaliativa2.petshop.model.cliente.Cliente;
+import tarefaavaliativa2.petshop.model.produto.Produto;
 
 import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
 import static lombok.AccessLevel.PRIVATE;
@@ -27,8 +30,6 @@ import static lombok.AccessLevel.PRIVATE;
 @Entity
 @Getter
 @Builder
-@ToString
-@EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor(access = PRIVATE)
 public class Atendimento {
@@ -63,6 +64,27 @@ public class Atendimento {
     public void adicionarProdutos(Collection<AtendimentoProduto> produtos) {
 
         this.produtos = produtos;
+    }
+
+    public void atualizarProdutos(Collection<AtendimentoProduto> novosProdutos) {
+        validarProdutosDuplicados(novosProdutos);
+        this.produtos.addAll(novosProdutos);
+    }
+
+    private void validarProdutosDuplicados(Collection<AtendimentoProduto> novosProdutos) {
+
+        Set<Produto> produtosExistentes = this.produtos.stream()
+                .map(AtendimentoProduto::getProduto)
+                .collect(Collectors.toSet());
+
+        Set<Produto> produtosDuplicados = novosProdutos.stream()
+                .map(AtendimentoProduto::getProduto)
+                .filter(produtosExistentes::contains)
+                .collect(Collectors.toSet());
+
+        if (!produtosDuplicados.isEmpty()) {
+            throw new IllegalArgumentException("Produtos duplicados encontrados");
+        }
     }
 
     public void adicionarCliente(Cliente cliente) {

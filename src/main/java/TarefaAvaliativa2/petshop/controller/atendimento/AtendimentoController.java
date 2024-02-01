@@ -32,14 +32,21 @@ class AtendimentoController {
     }
 
     @GetMapping
-    Collection<Atendimento> listarAtendimentos() {
+    Collection<AtendimentoResponse> listarAtendimentos() {
 
-        return atendimentoService.buscarAtendimentos();
+        return atendimentoService.buscarAtendimentos()
+                .stream()
+                .map(AtendimentoMapper::mapToAtendimentoResponse)
+                .toList();
     }
 
     @PostMapping("/{id}/produtos")
-    void adicionarProdutos(@RequestBody AdicionarProdutoAtendimentoRequest request) {
+    AtendimentoResponse adicionarProdutos(@PathVariable Integer id,
+                                          @RequestBody Collection<AtendimentoProdutoRequest> requests) {
 
+        Collection<ProdutoSolicitado> produtosSolicitados = AtendimentoMapper.mapToProdutosSolicitados(requests);
+
+        return AtendimentoMapper.mapToAtendimentoResponse(atendimentoService.adicionarProdutos(id, produtosSolicitados));
     }
 
     @DeleteMapping("/{id}/produtos")

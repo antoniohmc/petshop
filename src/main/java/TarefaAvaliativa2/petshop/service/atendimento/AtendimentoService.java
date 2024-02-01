@@ -6,7 +6,6 @@ import tarefaavaliativa2.petshop.model.atendimento.Atendimento;
 import tarefaavaliativa2.petshop.model.atendimento.AtendimentoProduto;
 import tarefaavaliativa2.petshop.model.atendimento.ProdutoSolicitado;
 import tarefaavaliativa2.petshop.model.cliente.Cliente;
-import tarefaavaliativa2.petshop.model.produto.Produto;
 import tarefaavaliativa2.petshop.repository.atendimento.AtendimentoPersistenceService;
 import tarefaavaliativa2.petshop.service.cliente.ClienteService;
 import tarefaavaliativa2.petshop.service.produto.ProdutoService;
@@ -30,8 +29,8 @@ public class AtendimentoService {
         Cliente cliente = clienteService.buscarPorId(clienteId);
         atendimento.adicionarCliente(cliente);
 
-        Collection<AtendimentoProduto> atendimentosProdutos = atendimentoProdutoService.vincularProduto(atendimento, produtosSolicitados);
-        atendimento.adicionarProdutos(atendimentosProdutos);
+        Collection<AtendimentoProduto> atendimentoProdutos = atendimentoProdutoService.vincularProduto(atendimento, produtosSolicitados);
+        atendimento.adicionarProdutos(atendimentoProdutos);
 
         return atendimentoPersistenceService.iniciar(atendimento);
     }
@@ -39,5 +38,16 @@ public class AtendimentoService {
     public Collection<Atendimento> buscarAtendimentos() {
 
         return atendimentoPersistenceService.buscarAtendimentos();
+    }
+
+    public Atendimento adicionarProdutos(Integer atendimentoId, Collection<ProdutoSolicitado> produtosSolicitados) {
+
+        Atendimento atendimento = atendimentoPersistenceService.buscarPorId(atendimentoId);
+
+        Collection<AtendimentoProduto> atendimentoProdutos = atendimentoProdutoService.vincularProduto(atendimento, produtosSolicitados);
+
+        atendimento.atualizarProdutos(atendimentoProdutos);
+
+        return atendimentoPersistenceService.atualizar(atendimento);
     }
 }

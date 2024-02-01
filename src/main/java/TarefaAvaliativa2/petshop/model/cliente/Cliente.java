@@ -21,8 +21,6 @@ import static lombok.AccessLevel.PRIVATE;
 @Getter
 @Entity
 @Builder
-@ToString
-@EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor(access = PRIVATE)
 public class Cliente {

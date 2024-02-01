@@ -20,8 +20,6 @@ import static lombok.AccessLevel.PRIVATE;
 @Entity
 @Getter
 @Builder
-@ToString
-@EqualsAndHashCode
 @NoArgsConstructor
 @Table(name = "quantidade_estoque")
 @AllArgsConstructor(access = PRIVATE)

@@ -32,6 +32,7 @@ public class ProdutoService {
                         .id(existente.getId())
                         .quantidadeAtual(produto.getQuantidadeEstoque().getQuantidadeAtual())
                         .build())
+                .atendimentos(existente.getAtendimentos())
                 .build();
 
         return produtoPersistenceService.atualizar(atualizado);
